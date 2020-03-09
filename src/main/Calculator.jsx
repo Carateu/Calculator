@@ -49,6 +49,22 @@ export default class Calculator extends Component{
                     break;
                 case "*":
                     values[0] = values[0] * values[1]
+                    break;
+                case "√":
+                    values[0] = Math.sqrt(values[0])
+                    break;
+                case "^":
+                    values[0] = Math.pow(values[0],values[1])
+                    break;
+                case "%":
+                    values[0] = values[0] % values[1]
+                    break;
+                case "π":
+                    values[0] = 3.14
+                    break;
+                case "log":
+                    values[0] = Math.log(values[0])
+                
             }
             values[1] = 0
 
@@ -94,21 +110,26 @@ export default class Calculator extends Component{
                 <Display value={this.state.displayValue}/>
                 <Button label="AC" click={this.clearMemory} triple />
                 <Button label="/" click={this.setOperation} operation />
+                <Button label="√" click={this.setOperation} spOp />
                 <Button label="7" click={this.addDigit}/>
                 <Button label="8" click={this.addDigit}/>
                 <Button label="9" click={this.addDigit}/>
                 <Button label="*" click={this.setOperation} operation />
+                <Button label="^" click={this.setOperation} spOp />
                 <Button label="4" click={this.addDigit}/>
                 <Button label="5" click={this.addDigit}/>
                 <Button label="6" click={this.addDigit}/>
                 <Button label="-" click={this.setOperation} operation />
+                <Button label="%" click={this.setOperation} spOp />
                 <Button label="1" click={this.addDigit}/>
                 <Button label="2" click={this.addDigit}/>
                 <Button label="3" click={this.addDigit}/>
                 <Button label="+" click={this.setOperation} operation />
+                <Button label="log" click={this.setOperation} spOp/>
                 <Button label="0" click={this.addDigit} double />
                 <Button label="." click={this.addDigit}/>
                 <Button label="=" click={this.setOperation} operation />
+                <Button label="π" click={this.setOperation} spOp/>
             </div>
         )
     }
